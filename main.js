@@ -165,3 +165,29 @@ document.addEventListener("touchend", handleMouseUp);
 //document.addEventListener('keydown', handleArrowKeys);
 
 
+$(window).on('load', function() { // makes sure the whole site is loaded 
+
+  $('#status').delay(5500).fadeOut(); // will first fade out the loading animation 
+  $('#preloader').delay(6000).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+  $('body').delay(350).css({'overflow':'visible'},);
+})
+
+
+
+
+$(document).ready(function(){
+  $('.popup-btn').click(function(){ 
+    var popupBlock = $('#'+$(this).data('popup'));
+    popupBlock.addClass('active')
+      .find('.fade-out').click(function(){
+        popupBlock.css('opacity','0').find('.popup-content').css('margin-top','350px');        
+        setTimeout(function(){
+          $('.popup').removeClass('active');
+          popupBlock.css('opacity','').find('.popup-content').css('margin-top','');
+        }, 600);
+      });
+ });
+});
+
+
+
