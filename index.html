@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zyre Mendoza</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <link rel="icon" type="image/x-icon" href="./logo.png">
     <link rel="stylesheet" href="home.css">
 
 
@@ -15,6 +15,15 @@
 <body>
 
   <!-- loader -->
+  <div id="preloader">
+    <div id="status">
+      <div class="intro">
+        <h2>Hello, I am</h2>
+        <h1>Zyre Mendoza</h1>
+        <h2>Your Creative <span class="text"></span></h2>
+      </div>
+    </div>
+  </div>
 
 
   <div class="mf-social-side-list">
@@ -40,14 +49,14 @@
   
 
     <div class="header">
-      <a href="https://zyre-mendoza.github.io/portfolio/"><img data-tilt data-tilt-scale="1.1" class="image-logo" src="images/logo.png" alt=""></a>
+      <a href="./"><img data-tilt data-tilt-scale="1.1" class="image-logo" src="images/logo.png" alt=""></a>
       <span class="name"></span>
     </div>
   
 
     
     <div class="carousel">
-      <div class="carousel-item" data-description="you can Download my Resume :)">
+      <div class="carousel-item" data-description="yes, you can Download my Resume :)">
         <div class="click-me">Click Me!</div>
         <div class="carousel-box">
           <!-- .html linki -->
@@ -109,33 +118,31 @@
       <div class="carousel-item" data-description="A cosmetics brand logo for a client!">
         <div class="click-me">Click Me!</div>
         <div class="carousel-box">
-          <a href="ApeAscent.html" class="link">
+          <a href="https://www.facebook.com/profile.php?id=100064075120015" target="_blank" class="link">
             <div class="title">Cosmetics logo</div>
           </a>
           <div class="num">06</div>
           <img src="images/bloom.png" />
-          <img class="mobile-image" src="https://doruksasmaz.com/content/ApeAscent.png" alt="Enhancer Gaming Hackathon">
         </div>
       </div>
 
   
       <div class="carousel-item" data-description="A Car Dealership Logo for a client!">
-        <div class="click-me">Click Me!</div>
+        <div class="click-me"></div>
         <div class="carousel-box">
-          <a href="HotHell.html" class="link">
+          <a  class="link">
             <div class="title">Car Dealership Logo</div>
           </a>
           <div class="num">07</div>
           <img src="images/jettcars.png" />
 
-          <img class="mobile-image" src="https://doruksasmaz.com/content/HotHell.png" alt="Enhancer Gaming Hackathon">
         </div>
       </div>
 
       <div class="carousel-item" data-description="A clothing brand logo for a client!">
         <div class="click-me">Click Me!</div>
         <div class="carousel-box">
-          <a href="ApeAscent.html" class="link">
+          <a href="https://www.facebook.com/TheLSTco" target="_blank" class="link">
             <div class="title">Clothing Brand logo</div>
           </a>
           <div class="num">08</div>
@@ -191,7 +198,7 @@
       <div class="carousel-item" data-description="Get in touch!">
         <div class="click-me">Click Me!</div>
         <div class="carousel-box">
-          <a href="nextondeck.html" class="link">
+          <a  class="link  popup-btn" data-popup="popup-reg">
             <div class="title">Be the next on the deck!</div>
           </a>
           <div class="num">13</div>
@@ -220,9 +227,67 @@
   
  
 
+    <div id="popup-reg" class="popup">
+      <div class="popup-content">
+        <div class="event-header">
+          <h6>Don't be shy, &nbsp; say hi!</h6>
+        </div>
+          <form id="send" action="https://formspree.io/f/xpzgzzwl"
+          method="POST" class="send-form">
+            <div class="form-group">
+              <input type="text" placeholder="Name" id="name" name="name" required="required">
+              
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Phone Number" id="phone" name="phone" required="required">
+              
+            </div>
+
+            <div class="form-group">
+              <input type="email" placeholder="Email" id="mail" name="mail" required="required">
+              
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Message" name="text" id="text"></textarea>
+             
+            </div>
+            <button type="submit" class="main-btn-rect" name="text" value="Send">
+              <i class="fa fa-paper-plane"></i>Send</button>
+          </form>
+        <span class="fade-out main-btn-circle">╳</span>
+      </div>
+    </div>
 
 
-  </html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js" integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg==" crossorigin="anonymous"></script>
+    <script>
+      var typing=new Typed(".text", {
+          strings: ["Developer", "Designer",],
+          typeSpeed: 100,
+          backSpeed: 40,
+          loop: true,
+      });
+   </script>
+
+
+ <script>
+  $(document).ready(function(){
+  $('.popup-btn').click(function(){ 
+    var popupBlock = $('#'+$(this).data('popup'));
+    popupBlock.addClass('active')
+      .find('.fade-out').click(function(){
+        popupBlock.css('opacity','0').find('.popup-content').css('margin-top','350px');        
+        setTimeout(function(){
+          $('.popup').removeClass('active');
+          popupBlock.css('opacity','').find('.popup-content').css('margin-top','');
+        }, 600);
+      });
+ });
+});
+ </script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
   <script src="jQuery.js"></script>
   <script src="https://kit.fontawesome.com/b939765d86.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
