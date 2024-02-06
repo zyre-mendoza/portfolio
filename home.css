@@ -21,6 +21,21 @@ body {
   user-select: none;
 }
 
+.project-body{
+  overflow: hidden;
+  font-family: "GrandHaven";
+  height: 100vh;
+  background: linear-gradient(135deg,   #F2DADF, 80%, white);
+  cursor: none !important;
+  line-height: 200%;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 #preloader {
   position: fixed;
